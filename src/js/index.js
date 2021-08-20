@@ -43,5 +43,12 @@ elements.pageButtons.addEventListener("click", (e) => {
   }
 });
 
-const r = new Recipe(47746);
-r.getRecipe();
+const controlRecipe = () => {
+  // 1) get ID from URL
+  // 2) create the model of Recipe
+  // 3) prepare UI screen
+  // 4) download Recipes
+  // 5) estimate time and ingredients of a Recipe
+  // 6) print Recipe on the screen
+};
+window.addEventListener("hashchange", controlRecipe);
