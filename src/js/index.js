@@ -43,12 +43,19 @@ elements.pageButtons.addEventListener("click", (e) => {
   }
 });
 
-const controlRecipe = () => {
+const controlRecipe = async () => {
   // 1) get ID from URL
+  const id = window.location.hash.replace("#", "");
+  console.log(id);
   // 2) create the model of Recipe
+  state.recipe = new Recipe(id);
   // 3) prepare UI screen
   // 4) download Recipes
+  await state.recipe.getRecipe();
   // 5) estimate time and ingredients of a Recipe
+  state.recipe.calcTime();
+  state.recipe.calcHuniiToo();
   // 6) print Recipe on the screen
+  console.log(state.recipe);
 };
 window.addEventListener("hashchange", controlRecipe);
